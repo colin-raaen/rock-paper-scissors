@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const winMessage = document.getElementById("win-message");
     const loseMessage = document.getElementById("lose-message");
     const drawMessage = document.getElementById("draw-message");
+    const resetButton = document.getElementById("reset-button"); // reset button
 
     // Listener event for click
     pageContainer.addEventListener('click', function(event) {
@@ -62,6 +63,10 @@ document.addEventListener('DOMContentLoaded', function(){
                 drawCountSpan.textContent = drawCount;
             }
 
+        }
+        // if Reset Button was clicked
+        if (event.target === resetButton){
+            handleResetButton(); // call function to handle reset button clicked
         }
 
     });
@@ -161,10 +166,15 @@ document.addEventListener('DOMContentLoaded', function(){
         // Set a timer to wait 2.5 seconds before fading
         setTimeout(() => {
           // Use jQuery `fadeOut` animation (requires Bootstrap JS included)
-          $(messageElement).fadeOut(500, () => {
+          $(messageElement).fadeOut(250, () => {
             // Hide the element after fade is complete
             messageElement.style.display = 'none';
           });
         }, 2000); // Set timeout to 2.5 seconds
+      }
+
+      // Helper function to handle rest button click
+      function handleResetButton(){
+        location.reload(); // reload the page to reset
       }
 });

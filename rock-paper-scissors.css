@@ -1,6 +1,15 @@
+body {
+  text-align: center;
+  display: flex; /* flexbox to make footer appear at bottom of page */
+  flex-direction: column;
+  min-height: 100vh; /* Set the minimum height of the body to 100% of the viewport height */
+  margin: 0;
+}
+
 .page-container{
   text-align: center;
   margin: 15px;
+  flex: 1; /* Allow the wrapper to grow and take up remaining space */
 }
 
 .alert {
@@ -8,7 +17,7 @@
   top: 125px;
   left: 50%;
   width: 90%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); /* position in the middle of the page */
   display: none;
 }
 
@@ -60,6 +69,7 @@
 
 .counts-div{
   display: flex;
+  flex-wrap: wrap;
   justify-content: center; /* Center elements horizontally */
   align-items: center; /* Center elements vertically */
 }
@@ -67,7 +77,27 @@
 .count-display{
   margin: 30px;
   text-align: center; /* Center content */
+  width: 200px;
 }
+
+#reset-button {
+  margin: 20px;
+}
+
+/* Footer Styling */
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: 25px;
+  background-color: white;
+}
+
+.footer-top {
+  text-align: center;
+  font-size: 12px;
+  padding: 10px;
+  font-family: Helvetica, Arial, sans-serif;
+}  
 
 /* Mobile view formatting and styling */
 @media only screen and (max-width: 767px) {
